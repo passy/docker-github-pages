@@ -1,10 +1,10 @@
 FROM starefossen/ruby-node:2-6-alpine
 
-ENV GITHUB_GEM_VERSION 137
+ENV GITHUB_GEM_VERSION 138
 ENV JSON_GEM_VERSION 1.8.6
 
 RUN apk --update add --virtual build_deps \
-    build-base ruby-dev libc-dev linux-headers \
+    build-base git ruby-dev libc-dev linux-headers \
   && gem install --verbose --no-document \
     json:${JSON_GEM_VERSION} \
     github-pages:${GITHUB_GEM_VERSION} \
